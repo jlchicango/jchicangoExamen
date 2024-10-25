@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="jchicangoExamen.Views.Login"
+             Title="Login">
+    <VerticalStackLayout Spacing="25" Padding="25">
+
+
+        <Label 
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+        <Image Source="https://sbsconsulting.com.ec/wp-content/uploads/2018/01/LOGO-UISRAEL-768x209.png"
+               WidthRequest="250"/>
+        
+        
+
+        <StackLayout Padding="30">
+            <Label Text="Login" FontSize="32" HorizontalOptions="Center"/>
+
+            <Grid>
+                <!-- Definir las filas y columnas -->
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <!-- Altura de la primera fila -->
+                    <RowDefinition Height="*" />
+                    <!-- Altura de la segunda fila -->
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <!-- Ancho de la primera columna -->
+                    <ColumnDefinition Width="*" />
+                    <!-- Ancho de la segunda columna -->
+                </Grid.ColumnDefinitions>
+
+                <!-- Elementos dentro del Grid -->
+                <!-- Primer elemento, en la primera fila y primera columna -->
+                <Label Text="Usuario"
+           Grid.Row="0"
+           Grid.Column="0"
+           BackgroundColor="LightBlue"
+           HorizontalOptions="FillAndExpand"
+           VerticalOptions="Center" />
+
+                <!-- Segundo elemento, en la primera fila y segunda columna -->
+                <Label Text="Contraseña"
+           Grid.Row="0"
+           Grid.Column="1"
+           BackgroundColor="LightGreen"
+           HorizontalOptions="FillAndExpand"
+           VerticalOptions="Center" />
+
+                <!-- Tercer elemento, en la segunda fila y primera columna -->
+
+
+                <Entry x:Name="UsernameEntry" 
+               Placeholder="Ingrese Usuario"
+           Grid.Row="1"
+           Grid.Column="0"
+           VerticalOptions="Center"
+           HorizontalOptions="FillAndExpand" />
+
+
+                <!-- Cuarto elemento, en la segunda fila y segunda columna -->
+
+                <Entry x:Name="PasswordEntry" 
+               Placeholder="Ingrese la Contraseña" 
+               IsPassword="True"
+           Grid.Row="1"
+           Grid.Column="1"
+           VerticalOptions="Center"
+           HorizontalOptions="FillAndExpand" />
+            </Grid>
+
+            <Button Text="Iniciar Sesión" Clicked="OnLoginClicked"/>
+
+            <Label x:Name="ResultLabel" Text="" HorizontalOptions="Center" TextColor="Red"/>
+        </StackLayout>
+    </VerticalStackLayout>
+</ContentPage>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="jchicangoExamen.Views.Registro"
+             Title="Registro">
+    <VerticalStackLayout>
+
+        <Label x:Name="lblUsuario" 
+       FontSize="16"
+       TextColor="Coral"
+       HorizontalTextAlignment="End"/>
+
+
+        <Grid Padding="20" RowSpacing="10" ColumnSpacing="10">
+            
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <!-- Label para Elemento Visual -->
+            <Label Text="Fecha:" 
+               Grid.Row="0" 
+               Grid.Column="0"
+               VerticalOptions="Center" />
+
+            <!-- DatePicker para la Fecha -->
+            <DatePicker x:Name="dpFecha" 
+                    Grid.Row="0" 
+                    Grid.Column="1"
+                    Format="MM/dd/yyyy" />
+
+            <!-- Label para País -->
+            <Label Text="País:" 
+               Grid.Row="1" 
+               Grid.Column="0"
+               VerticalOptions="Center" />
+
+            <!-- Picker para País -->
+            <Picker x:Name="pickerPais"
+                Grid.Row="1" 
+                Grid.Column="1">
+                <!-- Aquí puedes agregar los países -->
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>España</x:String>
+                        <x:String>Estados Unidos</x:String>
+                        <x:String>Argentina</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <!-- Label para Ciudad -->
+            <Label Text="Ciudad:" 
+               Grid.Row="2" 
+               Grid.Column="0"
+               VerticalOptions="Center" />
+
+            <!-- Picker para Ciudad -->
+            <Picker x:Name="pickerCiudad"
+                Grid.Row="2" 
+                Grid.Column="1">
+                <!-- Aquí puedes agregar las ciudades -->
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Madrid</x:String>
+                        <x:String>Nueva York</x:String>
+                        <x:String>Buenos Aires</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <!-- Label para Monto Inicial -->
+            <Label Text="Monto Inicial:" 
+               Grid.Row="3" 
+               Grid.Column="0"
+               VerticalOptions="Center"/>
+
+            <!-- Entry para Monto Inicial -->
+            <Entry x:Name="entryMontoInicial"
+                   Keyboard="Numeric"
+               Grid.Row="3" 
+               Grid.Column="1"
+               Placeholder="Ingrese monto inicial" />
+
+            <!-- Botón para Elemento Visual -->
+            <Button x:Name="btnCalcular"
+                Grid.Row="4" 
+                Grid.Column="0"
+                Text="Calcular" 
+                    Clicked="btnCalcular_Clicked"/>
+
+            <!-- Entry para Pago Mensual (bloqueado) -->
+            <Entry x:Name="entryPagoMensual"
+               Grid.Row="4" 
+               Grid.Column="1"
+               Placeholder="Resultado"
+               IsEnabled="False" />
+        </Grid>
+
+</VerticalStackLayout>
+</ContentPage>
